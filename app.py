@@ -12,7 +12,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     '''Returns the homepage'''
-    return render_template('index.html')
+    return render_template('index.html', items=item.find())
 
 @app.route('/item/new')
 def new_item():
