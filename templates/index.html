@@ -1,10 +1,13 @@
 <!-- temmplates/index.html -->
 {% extends 'base.html' %}
 
-{% block content %}
-    <h1>Item</h1>
-    {% for item in items %}
-        <h2>{{ item.title }}</h2>
-        <small>{{ item.description }}</small>
-    {% endfor %}
+{% block content %}    
+<h1>Item</h1>
+
+<a href="/item/new">New Item</a>
+
+{% for item in items %}
+    <h2>{{ item.title }}</h2>
+    <small>{{ item.description }}</small>
+{% endfor %}
 {% endblock %}

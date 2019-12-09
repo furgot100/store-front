@@ -1,10 +1,33 @@
 <!-- templates/new_item.html -->
-{% extend 'base.html %'}
+{% extends 'base.html' %}
 
-<a href="/">Back Home</a>
+{% block content %}
+<a href="/">Home</a>
+<form method='POST' action='/item'>
+    <fieldset>
+        <legend>New Item</legend>
+        <!-- TITLE -->
+        <p>
+            <label for='item-title'>Title</label><br>
+            <input id='item-title' type='text' name='title' />
+        </p>
 
-<h1>New Item</h1>
+        <!-- DESCRIPTION -->
+        <p>
+            <label for='description'>Description</label><br>
+            <input id='description' type='text' name='description' />
+        </p>
 
-{% include 'partials/form.html' %}
+        <!-- VIDEO IDS -->
+        <p>
+            <label for='item-ids'>Image</label><br>
+            <input type="text" name="img_url">
+        </p>
+    </fieldset>
 
+    <!-- BUTTON -->
+    <p>
+        <button type='submit'>Save Playlist</button>
+    </p>
+</form>
 {% endblock %}

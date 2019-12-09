@@ -1,0 +1,12 @@
+<!-- templates/show_item.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="/"class="home">Back to Home</a>
+
+<h1>{{ item.title }}</h1>
+<h2>{{ item.description }}</h2>
+{% for picture in item.image %}
+    <img src="{{item.img_url}}" style="width:500px;height:300px;"><br>
+{% endfor %}
+{% endblock %}
