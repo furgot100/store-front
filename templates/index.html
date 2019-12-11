@@ -3,10 +3,17 @@
 
 {% block content %}    
 <h1>Item</h1>
-
-<a href="/item/new">New Item</a>
+<div>
+    <a href="/new" class="newplayer">New Player</a>
     
-{{ item.title }}
-<small>{{ item.description }}</small>
-
+    <ul>
+    {% for item in items %}
+        <div class ="nodots">
+            <a href="/item/{{item._id}}" class="showitem">{{item.name}}</a>
+            <br>
+            <img src="{{item.img_url}}" style="width:250px;height:200px;">
+        </div>
+    {% endfor %}
+    </ul>
+</div>
 {% endblock %}
