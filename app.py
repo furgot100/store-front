@@ -12,7 +12,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     '''Returns the homepage'''
-    item= items.find()
+    item = items.find()
     return render_template('index.html', item=item)
 
 @app.route('/item/new')
@@ -30,7 +30,7 @@ def item_submit():
         'url': request.form.get('url')
     }
     item_id = items.insert_one(item).inserted_id
-    return redirect(url_for('show_item', item_id=item_id))
+    return redirect(url_for('index', item_id=item_id))
 
 
 @app.route('/item/<item_id>')

@@ -2,33 +2,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container d-flex justify-content-center">
-    <form method='POST' action='/item'>
-        <fieldset>
-            <legend>New Item</legend>
-            <!-- TITLE -->
-            <p>
-                <label for='title'>Title</label><br>
-                <input type='text' name='title' />
-            </p>
-            <p>
-                <label for='description'>Description of Item</label><br>
-                <input type='text' name='description' />
-            </p>
-            <p>
-                <label for="price">Price</label><br>
-                <input type='text' name='price' />
-            </p>
-            <p> 
-                <h4>Add a photo of item</h4>
-                <label for='url'>URL</label><br>
-                <input type='url' name='url' />
-            </p>
-        </fieldset>
-        <!-- BUTTON -->
-        <p>
-            <button type='submit'>Save Item</button>
-        </p>
-    </form>
-</div>
+<form method='POST' action='/item'>
+    <fieldset>
+    <legend>New Item</legend>
+    <!-- TITLE -->
+    <p>
+        <label for='title'>Title</label><br>
+        <input type='text' name='title' />
+    </p>
+    <p>
+        <label for='description'>Description</label><br>
+        <input type='text' name='description' />
+    </p>
+    </fieldset>
+
+    <!-- BUTTON -->
+    <p>
+        <button type='submit'>Save Item</button>
+    </p>
+</form>
 {% endblock %}

@@ -1,24 +1,14 @@
-<!-- temmplates/index.html -->
+<!-- templates/index.html -->
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1 style=text-align:center class="mt-5">Items</h1>
+<h1>Items</h1>
 
-        {% for item in items %}
-        <div class="card container mb-5 mt-5 card-body">
-            <div class=row>
-                <div class=col-sm>
-                    <img class='center' width="400" height="270" src="{{ item.url }}"></img>
-                </div>
-            <div class=col-sm>
-                <h1><a href='/item/{{ item._id }}'>{{ item.title }}</a></h3>
-                <p class="hello"> Item Description: {{ item.description|safe|truncate(400) }}</p>
-            </div>
-            <div>
-                <small> price: {{ item.price }}$</small>
-            </div>
-                
-            </div>
-        </div>
-        {% endfor %}
+<!-- New link here -->
+<a href='/item/new'>New item</a>
+
+{% for item in items %}
+    <h2>{{ item.title }}</h2>
+    <small>{{ item.description }}</small>
+{% endfor %}
 {% endblock %}
