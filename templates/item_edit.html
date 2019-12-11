@@ -4,32 +4,4 @@
 
 {% block content %}
 
-<form method='POST' action='/item/ {{ item._id }}'>
-    <fieldset>
-        <legend>Edit Item</legend>
-        <!-- TITLE -->
-        <p>
-            <label for='title'>Title</label><br>
-            <input type='text' name='title' />
-        </p>
-        <p>
-            <label for='description'>Description of Item</label><br>
-            <input type='text' name='description' />
-        </p>
-        <p>
-            <label for="price">Price</label><br>
-            <input type='text' name='price' />
-        </p>
-        <p> 
-            <h4>Add a Photo of Item</h4>
-            <label for='url'>URL</label><br>
-            <input type='url' name='url' />
-        </p>
-    </fieldset>
-    <!-- BUTTON -->
-    <p>
-        <button type='submit'>Save Item</button>
-    </p>
-</form>
-
 {% endblock %}
