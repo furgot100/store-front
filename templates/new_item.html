@@ -2,32 +2,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<a href="/">Home</a>
-<form method='POST' action='/item'>
-    <fieldset>
-        <legend>New Item</legend>
-        <!-- TITLE -->
-        <p>
-            <label for='item-title'>Title</label><br>
-            <input id='item-title' type='text' name='title' />
-        </p>
 
-        <!-- DESCRIPTION -->
-        <p>
-            <label for='description'>Description</label><br>
-            <input id='description' type='text' name='description' />
-        </p>
+<a href="/">Back to Home</a>
 
-        <!-- VIDEO IDS -->
-        <p>
-            <label for='item-ids'>Image</label><br>
-            <input type="text" name="img_url">
-        </p>
-    </fieldset>
+<h1>New Player</h1>
 
-    <!-- BUTTON -->
-    <p>
-        <button type='submit'>Save Playlist</button>
-    </p>
+<form action="/new" method="POST">
+    Name of Player: <input type="text" name="name"><br>
+    Position of Player: <input type="text" name="position"><br>
+    Image URL: <input type="text" name="img_url"><br>
+    <button type="submit">Submit</button><br>
 </form>
+
 {% endblock %}

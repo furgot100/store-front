@@ -5,9 +5,8 @@
 <h1>Item</h1>
 
 <a href="/item/new">New Item</a>
+    
+{{ item.title }}
+<small>{{ item.description }}</small>
 
-{% for item in items %}
-    <h2>{{ item.title }}</h2>
-    <small>{{ item.description }}</small>
-{% endfor %}
 {% endblock %}
