@@ -5,13 +5,15 @@
 
 <a href="/">Back to Home</a>
 
-<h1>New Player</h1>
+<h1>New Item</h1>
 
-<form action="/new" method="POST">
-    Name of Player: <input type="text" name="name"><br>
-    Position of Player: <input type="text" name="position"><br>
-    Image URL: <input type="text" name="img_url"><br>
-    <button type="submit">Submit</button><br>
-</form>
+<fieldset>
+    <form action="/new/{{item._id}}" method="POST">
+        Name of Item: <input type="text" name="name" value="{{item.name}}"><br>
+        Description of Item: <input type="text" name="description" value="{{item.description}}"><br>
+        Image URL: <input type="text" name="img_url" value="{{item.img_url}}"><br>
+        <button type="submit">Submit</button><br>
+    </form>
+</fieldset>
 
 {% endblock %}

@@ -2,11 +2,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
 <a href="/"class="home">Back to Home</a>
 
-<h1>{{ item.title }}</h1>
-<h2>{{ item.description }}</h2>
-{% for picture in item.image %}
-    <img src="{{item.img_url}}" style="width:500px;height:300px;"><br>
-{% endfor %}
+<h1>Item: {{item.name}}</h1>
+
+<img src="{{item.img_url}}" style="width:500px;height:300px;"><br>
+
+Description: {{item.description}}
+
+<br><br>
+<a href="/edit/{{item._id}}" class="edit">Edit item</a>
+
 {% endblock %}
