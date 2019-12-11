@@ -12,7 +12,8 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     '''Returns the homepage'''
-    return render_template('index.html', items=items.find())
+    item= items.fin()
+    return render_template('index.html', item=items)
 
 @app.route('/item/new')
 def new_item():
@@ -25,10 +26,11 @@ def item_submit():
     item = {
         'title' : request.form.get('title'),
         'description' : request.form.get('description'),
-        'img_url': request.form.get('img_url')
+        'price': request.form.get('price'),
+        'url': request.form.get('url')
     }
     item_id = items.insert_one(item).inserted_id
-    return redirect(url_for('index',item_id=item_id))
+    return redirect(url_for('show_item',item_id=item_id))
 
 
 @app.route('/item/<item_id>')

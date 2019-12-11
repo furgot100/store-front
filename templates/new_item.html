@@ -2,18 +2,33 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<a href="/">Back to Home</a>
-
-<h1>New Item</h1>
-
-<fieldset>
-    <form action="/new/{{item._id}}" method="POST">
-        Name of Item: <input type="text" name="name" value="{{item.name}}"><br>
-        Description of Item: <input type="text" name="description" value="{{item.description}}"><br>
-        Image URL: <input type="text" name="img_url" value="{{item.img_url}}"><br>
-        <button type="submit">Submit</button><br>
+<div class="container d-flex justify-content-center">
+    <form method='POST' action='/item'>
+        <fieldset>
+            <legend>New Item</legend>
+            <!-- TITLE -->
+            <p>
+                <label for='title'>Title</label><br>
+                <input type='text' name='title' />
+            </p>
+            <p>
+                <label for='description'>Description of Item</label><br>
+                <input type='text' name='description' />
+            </p>
+            <p>
+                <label for="price">Price</label><br>
+                <input type='text' name='price' />
+            </p>
+            <p> 
+                <h4>Add a photo of item</h4>
+                <label for='url'>URL</label><br>
+                <input type='url' name='url' />
+            </p>
+        </fieldset>
+        <!-- BUTTON -->
+        <p>
+            <button type='submit'>Save Item</button>
+        </p>
     </form>
-</fieldset>
-
+</div>
 {% endblock %}

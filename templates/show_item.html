@@ -2,16 +2,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<a href="/"class="home">Back to Home</a>
-
-<h1>Item: {{item.name}}</h1>
-
-<img src="{{item.img_url}}" style="width:500px;height:300px;"><br>
-
-Description: {{item.description}}
-
-<br><br>
-<a href="/edit/{{item._id}}" class="edit">Edit item</a>
-
+    <div class="card container mb-5 mt-5 card-body">
+        <div class="row">
+            <div class="col-sm">
+                <img class='center' width="500" height="400" src="{{ item.url }}"></img>
+                <h1>{{ item.title }}</h1>
+                <small> Price: {{ item.price }}$</small>
+                <p> 
+                    <a href='/item/{{ item._id }}/edit'>Edit</a>
+                </p>
+            </div>
+            <div class="col-sm">
+                <p> Description: {{ item.description }}</p>
+            </div>
+        </div>
+    </div>
+    <a href='/'>back home</a>
 {% endblock %}
