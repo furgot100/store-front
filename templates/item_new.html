@@ -1,12 +1,10 @@
-<!-- templates/item_edit.html -->
+<!-- templates/item_new.html -->
 {% extends 'base.html' %}
 
 {% block content %}
-<a href='/item/{{ item._id }}'>Back</a>
 <div class='row'>
     <div class='col-sm-6 col-sm-offset-3'>
-        <form method='POST' action='/item/{{item._id}}'>
-            <input type='hidden' name='_method' value='PUT'/>
+        <form method="POST" action="/item">
             {% include 'partials/item_form.html' %}
             <div clas='form-group'>
                 <button class='btn btn-primary' type='submit'>Save Item</button>
