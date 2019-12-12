@@ -2,13 +2,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Items</h1>
-
-<!-- New link here -->
-<a href='/item/new'>New item</a>
-
-{% for item in items %}
-    <h2><a href='/item/{{ item._id }}'>{{ item.title }}</a></h2>
-    <small>{{ item.description }}</small>
-{% endfor %}
+<div class='row'>
+    <div class='col-sm-6 col-sm-offset-3'>
+        <form method='POST' action='/item/{{item._id}}'>
+            <input type='hidden' name='_method' value='PUT'/>
+            {% include 'partials/playlists_form.html' %}
+            <!-- BUTTON -->
+        </form>
+    </div>
+</div>
 {% endblock %}

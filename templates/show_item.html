@@ -6,4 +6,9 @@
 <h1>{{ item.title }}</h1>
 <h2>{{ item.description }}</h2>
 <img class='center' width="500" height="400" src="{{ item.image }}"></img>
+<p><a href='/item/{{ item._id }}/edit'>Edit</a></p>
+
+<p><form method='POST' action='item/{{ item._id }}/delete'>
+    <button type='submit'>Delete</button>
+</form></p>
 {% endblock %}

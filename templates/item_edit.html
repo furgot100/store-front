@@ -3,5 +3,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<form method="POST" action="/item/{{item_.id}}">
+    {% include 'partials/item_forms.html' %}
+</form>
 {% endblock %}
