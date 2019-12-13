@@ -2,22 +2,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<a href="/">Back Home</a>
+
 <div class="card container mb-5 mt-5 card-body">
     <div class="row">
         <div class="col-sm">
             <h1>{{ item.title }}</h1>
-            <h2>{{ item.description }}</h2>
-            <h3>{{ item.price }}</h3>
             <img class='center' width="500" height="400" src="{{ item.image }}"></img>
-
-            <p><a href='/item/{{ item._id }}/edit'>Edit</a></p>
-
-            <p><form method='POST' action='/item/{{ item._id }}/delete'>
-                <input type='hidden' name='_method' value="DELETE">
-                <button class='btn btn-primary' type='submit'>Delete</button>
-            </form></p>
+            <h2>{{ item.description }}</h2>
+            <h3>${{ item.price }}</h3>
         </div>
+        <div class="col-sm">
+            <p><a href='/item/{{ item._id }}/edit'>Edit</a></p>
+        </div>
+        <p><form method='POST' action='/item/{{ item._id }}/delete'>
+            <input type='hidden' name='_method' value="DELETE">
+            <button class='btn btn-primary' type='submit'>Delete</button>
+        </form></p>    
     </div>
 </div>
+<a href="/">Back Home</a>
 {% endblock %}
