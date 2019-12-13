@@ -4,7 +4,7 @@ from bson.objectid import ObjectId
 import os
 
 
-host = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/wishlist')
+host = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/Wishlist')
 client = MongoClient(host=f'{host}?retryWrites=false')
 db = client.get_default_database()
 items = db.items
