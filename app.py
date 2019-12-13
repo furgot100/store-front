@@ -36,11 +36,13 @@ def item_submit():
 
 @app.route('/item/<item_id>')
 def item_show(item_id):
+    '''Shows items'''
     item = items.find_one({'_id': ObjectId(item_id)})
     return render_template('show_item.html', item=item)
 
 @app.route('/item/<item_id>', methods=['POST'])
 def item_update(item_id):
+    '''UPDATE'''
     updated_item = {
         'title': request.form.get('title'),
         'description': request.form.get('description'),
@@ -54,11 +56,13 @@ def item_update(item_id):
 
 @app.route('/item/<item_id>/edit')
 def item_edit(item_id):
+    '''Edits Items'''
     item = items.find_one({'_id': ObjectId(item_id)})
     return render_template('item_edit.html', item=item, title='Edit Item')
 
 @app.route('/item/<item_id>/delete', methods=['POST'])
 def item_delete(item_id):
+    '''Deletes items'''
     items.delete_one({'_id': ObjectId(item_id)})
     return redirect(url_for('index'))
 
